@@ -5,3 +5,12 @@ background-color: #e86341;
 /* .form-control {
     width: 250px;
 } */
+.user {
+    margin: 240px;
+    display: contents;
+}
+
+.verifycodeImg {
+   width: fit-content;
+   height: 40px;
+}

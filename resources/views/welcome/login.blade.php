@@ -1,11 +1,3 @@
-<!-- /*
-* @Author: your name
-* @Date: 2022-01-22 15:43:53
-* @LastEditTime: 2022-01-22 15:53:52
-* @LastEditors: Please set LastEditors
-* @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-* @FilePath: /finalYearProject/resources/views/welcome/login.blade.php
-*/ -->
 <!DOCTYPE html>
 <!--[if IE 9 ]><html class="ie9"><![endif]-->
 
@@ -13,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Material Admin</title>
+    <title>Stoke Restaurants</title>
 
     <!-- Vendor CSS -->
     <link href="/components/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
@@ -29,44 +21,64 @@
 
 <body class="login-content">
     <!-- Login -->
-    <div class="lc-block toggled" id="l-login">
-        <div class="input-group m-b-20">
-            <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-            <div class="fg-line">
-                <input type="text" class="form-control" placeholder="Username">
+    @if(is_object($errors))
+    @foreach($errors->all() as $error)
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        {{$error}}!
+    </div>
+    @endforeach
+    @else
+    <div class="alert alert-danger" role="alert">
+        {{$errors}}
+    </div>
+    @endif
+    <form class="user" method="POST" action="/admin/homepage">
+        {{csrf_field()}}
+        <div class="lc-block toggled" id="l-login">
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                <div class="fg-line">
+                    <input type="text" class="form-control" placeholder="Username" name="username">
+                </div>
             </div>
-        </div>
 
-        <div class="input-group m-b-20">
-            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
-            <div class="fg-line">
-                <input type="password" class="form-control" placeholder="Password">
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+                <div class="fg-line">
+                    <input type="password" class="form-control" placeholder="Password" name="passwrod">
+                </div>
             </div>
-        </div>
 
-        <div class="input-group m-b-20">
-            <span class="input-group-addon"><i class="zmdi zmdi-camera-alt"></i></span>
-            <div class="fg-line">
-                <input type="text" id="verifyCode" class="form-control" placeholder="Verify Code">
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="zmdi zmdi-camera-alt"></i></span>
+                <div class="fg-line">
+                    <input type="text" id="verifyCode" class="form-control" placeholder="Verify Code" name="code">
+                </div>
             </div>
-        </div>
 
-        <div class="clearfix"></div>
+            <img src="{{captcha_src('flat')}}" alt="" onclick="this.src='{{captcha_src('flat')}}'+Math.random()"
+                class="verifycodeImg">
+            <p class="notification">Click Image to Change!</p>
 
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="">
-                <i class="input-helper"></i>
-                Keep me signed in
-            </label>
-        </div>
-        <!--login-->
-        <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+            <div class="clearfix"></div>
 
-        <ul class="login-navigation">
-            <li data-block="#l-register" class="bgm-red">Register</li>
-            <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
-        </ul>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    <i class="input-helper"></i>
+                    Keep me signed in
+                </label>
+            </div>
+    </form>
+    <button type="submit" class=" btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></button>
+    <!--login-->
+
+    <ul class="login-navigation">
+        <li data-block="#l-register" class="bgm-red">Register</li>
+        <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
+    </ul>
     </div>
 
     <!-- Register -->
