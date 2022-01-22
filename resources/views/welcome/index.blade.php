@@ -25,6 +25,8 @@
         rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" href="{{ asset('/components/css/styles.css')}}" type="text/css">
+    <!-- customised CSS formate -->
+    <link rel="stylesheet" href="{{ asset('/components/css/customised.css')}}" type="text/css">
 </head>
 
 <body>
@@ -37,9 +39,8 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
                 </ul>
             </div>
         </div>
@@ -47,9 +48,9 @@
     <header class="masthead text-center text-white">
         <div class="masthead-content">
             <div class="container">
-                <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-                <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-                <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#!">Learn More</a>
+                <h1 class="masthead-heading mb-0">Nice To Meet You</h1>
+                <h2 class="masthead-subheading mb-0">Find A Suitable Restautant Around Stoke</h2>
+                <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#!">Log In</a>
             </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
@@ -112,7 +113,7 @@
     <!-- Footer starts here-->
     <footer class="py-5 bg-black">
         <div class="container">
-            <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p>
+            <p class="m-1 text-center small">Copyright &copy; Stoke Restaurant 2022</p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
