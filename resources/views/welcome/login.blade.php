@@ -44,6 +44,13 @@
             </div>
         </div>
 
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-camera-alt"></i></span>
+            <div class="fg-line">
+                <input type="text" id="verifyCode" class="form-control" placeholder="Verify Code">
+            </div>
+        </div>
+
         <div class="clearfix"></div>
 
         <div class="checkbox">
