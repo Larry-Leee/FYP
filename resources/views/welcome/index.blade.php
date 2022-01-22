@@ -31,12 +31,13 @@
     <!-- Navigation-->
     <nav class=" navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+            <a class="navbar-brand" href="#!">Stoke Restaurants</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
                 </ul>
@@ -56,7 +57,7 @@
         <div class="bg-circle-3 bg-circle"></div>
         <div class="bg-circle-4 bg-circle"></div>
     </header>
-    <section>
+    <!-- <section>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
@@ -72,8 +73,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section>
+    </section> -->
+    <!-- <section>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -106,8 +107,9 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Footer-->
+    </section> -->
+
+    <!-- Footer starts here-->
     <footer class="py-5 bg-black">
         <div class="container">
             <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p>
