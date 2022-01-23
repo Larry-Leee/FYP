@@ -49,14 +49,14 @@ class LoginController extends Controller
         $validator = Validator::make(Input::all(), $rules, $msg); //validate information
         $user = Account::where('username', $input['username'])->first();
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }
-        if ($user->username != $input['username'] || Crypt::decrypt($user->password) != $input['password']) {
-            return redirect('admin/login')->with('errors', 'Username or Password is Incorrect!');
-        } else {
-            return view('home.index');
-        }
+        // if ($validator->fails()) {
+        //     return Redirect::back()->withErrors($validator);
+        // }
+        // if ($user->username != $input['username'] || Crypt::decrypt($user->password) != $input['password']) {
+        //     return redirect('admin/login')->with('errors', 'Username or Password is Incorrect!');
+        // } else {
+        return view('home.index');
+        // }
     }
     //logout
     public function exit()

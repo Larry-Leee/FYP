@@ -21,22 +21,22 @@
 
 <body class="login-content">
     <!-- Login -->
-    @if(is_object($errors))
-    @foreach($errors->all() as $error)
-    <div class="alert alert-danger alert-dismissable" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                aria-hidden="true">&times;</span></button>
-        {{$error}}!
-    </div>
-    @endforeach
-    @else
-    <div class="alert alert-danger" role="alert">
-        {{$errors}}
-    </div>
-    @endif
     <form class="user" method="POST" action="/admin/homepage">
         {{csrf_field()}}
         <div class="lc-block toggled" id="l-login">
+            @if(is_object($errors))
+            @foreach($errors->all() as $error)
+            <div class="alert alert-danger alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                {{$error}}!
+            </div>
+            @endforeach
+            @else
+            <div class="alert alert-danger" role="alert">
+                {{$errors}}
+            </div>
+            @endif
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                 <div class="fg-line">
@@ -47,7 +47,7 @@
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
                 <div class="fg-line">
-                    <input type="password" class="form-control" placeholder="Password" name="passwrod">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
                 </div>
             </div>
 
