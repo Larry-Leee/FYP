@@ -9,9 +9,6 @@
 
     <!-- Vendor CSS -->
     @include('main.public.style')
-    <!-- CSS -->
-    <link href="css/app.min.1.css" rel="stylesheet">
-    <link href="css/app.min.2.css" rel="stylesheet">
 
 </head>
 
@@ -352,7 +349,7 @@
                 </ul>
             </div>
 
-            <ul class="main-menu" style="width: 400px;">
+            <ul class="main-menu">
                 <li class="active">
                     <a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
                 </li>
