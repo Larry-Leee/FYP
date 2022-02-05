@@ -17,11 +17,23 @@
     <link href="{{asset('/components/css/app.min.1.css')}}" rel="stylesheet">
     <link href="{{asset('/components/css/app.min.2.css')}}" rel="stylesheet">
     <link href="{{asset('/components/css/customised.css')}}" rel="stylesheet">
+
+    <!-- <script>
+        function checkForm() {
+            var nodex = document.getElementById("username");
+            var reg = /^\s*$/; // if there is zero or more spaces, return true
+            if (reg.test(nodex.value)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script> -->
 </head>
 
 <body class="login-content">
     <!-- Login -->
-    <form class="user" method="POST" action="/admin/homepage">
+    <form class="user" method="POST" action="/admin/homepage" onsubmit="return checkForm()">
         {{csrf_field()}}
         <div class="lc-block toggled" id="l-login">
             @if(is_object($errors))
@@ -40,8 +52,9 @@
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                 <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Username" name="username">
+                    <input type="text" class="form-control" placeholder="Username" name="username" id="username">
                 </div>
+                <!-- <span class="input-group-addon">xxxxx</span> -->
             </div>
 
             <div class="input-group m-b-20">
