@@ -1,7 +1,13 @@
 <!-- /*
+/*
+ * @Author: Li, Hang
+ * @Date: 2021-04-28 20:11:20
+ * @LastEditors: Li, Hang
+ * @FilePath: /finalYearProject/resources/views/welcome/index.blade.php
+ */
 * @Author: Larry
 * @Date: 2022-01-21 19:30:35
-* @LastEditTime: 2022-01-21 19:47:13
+ * @LastEditTime: 2022-02-05 19:18:22
 * @LastEditors: Please set LastEditors
 * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 * @FilePath: /finalYearProject/resources/views/welcome/index.blade.php
@@ -27,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset('/components/css/styles.css')}}" type="text/css">
     <!-- customised CSS formate -->
     <link rel="stylesheet" href="{{ asset('/components/css/customised.css')}}" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="components/img/icon.png" />
 </head>
 
 <body>
@@ -49,7 +56,7 @@
         <div class="masthead-content">
             <div class="container">
                 <h1 class="masthead-heading mb-0">Nice To Meet You</h1>
-                <h2 class="masthead-subheading mb-0">Find A Suitable Restautant Around Stoke</h2>
+                <h2 class="masthead-subheading mb-0">Find A Suitable Restaurant Around Stoke</h2>
                 <a class="btn btn-primary btn-xl rounded-pill mt-5" href="/admin/login">Log In</a>
             </div>
         </div>
@@ -58,62 +65,10 @@
         <div class="bg-circle-3 bg-circle"></div>
         <div class="bg-circle-4 bg-circle"></div>
     </header>
-    <!-- <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-5">
-                        <h2 class="display-4">For those about to rock...</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
-                            sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                            voluptatum molestiae adipisci, beatae obcaecati.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="p-5">
-                        <h2 class="display-4">We salute you!</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
-                            sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                            voluptatum molestiae adipisci, beatae obcaecati.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/03.jpg" alt="..." /></div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-5">
-                        <h2 class="display-4">Let there be rock!</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
-                            sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                            voluptatum molestiae adipisci, beatae obcaecati.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Footer starts here-->
-    <footer class="py-5 bg-black">
+    <footer class="py-1 bg-black">
         <div class="container">
-            <p class="m-1 text-center small">Copyright &copy; Stoke Restaurant 2022</p>
+            <p class="m-1 text-center small"><b>Copyright &copy; Stoke Restaurant 2022</b></p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
