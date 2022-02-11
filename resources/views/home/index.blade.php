@@ -8,12 +8,11 @@
     <title>Stoke Restaurants</title>
     <!-- Vendor CSS -->
     @include('main.public.style')
-
 </head>
 
 <body>
 
-    <header id="header-2" class="clearfix" data-current-skin="green">
+    <header id="header-2" class="clearfix" data-current-skin="lightred">
         <!-- Make sure to change both class and data-current-skin when switching sking manually -->
         <ul class="header-inner clearfix">
             <li id="menu-trigger" data-trigger=".ha-menu" class="visible-xs">
@@ -99,14 +98,14 @@
                 <span class="ss-skin ss-5 bgm-green" data-skin="green"></span>
                 <span class="ss-skin ss-6 bgm-orange" data-skin="orange"></span>
                 <span class="ss-skin ss-7 bgm-blue" data-skin="blue"></span>
-                <span class="ss-skin ss-8 bgm-purple" data-skin="purple"></span>
+                <span class="ss-skin ss-8 bgm-lightred" data-skin="lightred"></span>
             </div>
         </div>
     </header>
 
     <section id="main" data-layout="layout-1">
         <section id="content">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="block-header">
                     <h2>Dashboard</h2>
 
@@ -142,7 +141,7 @@
 
                 </div>
 
-                <div class="card">
+                <div class="card col-24">
                     <div class="card-header">
                         <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
 

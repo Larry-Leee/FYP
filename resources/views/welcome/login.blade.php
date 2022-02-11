@@ -18,6 +18,11 @@
     <link href="{{asset('/components/css/app.min.2.css')}}" rel="stylesheet">
     <link href="{{asset('/components/css/customised.css')}}" rel="stylesheet">
 
+    <!-- Background Video -->
+    <video class="video-tvc" id="video-tvc" autoplay loop="loop" muted>
+        <source src="/components/video/loginBgVideo.mp4" type="video/mp4" />
+    </video>
+
     <!-- <script>
         function checkForm() {
             var nodex = document.getElementById("username");
@@ -31,11 +36,11 @@
     </script> -->
 </head>
 
-<body class="login-content">
+<body class="sw-toggled opacity-25">
     <!-- Login -->
     <form class="user" method="POST" action="/admin/homepage" onsubmit="return checkForm()">
         {{csrf_field()}}
-        <div class="lc-block toggled" id="l-login">
+        <div class="lc-block toggled opacity" id="l-login">
             @if(is_object($errors))
             @foreach($errors->all() as $error)
             <div class="alert alert-danger alert-dismissable" role="alert">

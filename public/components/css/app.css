@@ -7982,6 +7982,12 @@ a.waves-effect .waves-ripple {
 .bgm-purple {
   background-color: #9c27b0 !important;
 }
+.bgm-lightred {
+  background-color: #de3a70 !important;
+}
+.c-lightred {
+ color: #de3a70 !important;
+}
 .c-purple {
   color: #9c27b0 !important;
 }
@@ -13920,6 +13926,10 @@ html.ismobile .page-loader {
   left: 24px;
   top: 26px;
 }
+#header-2 .skin-switch .dropdown-menu .ss-skin.ss-9 {
+  left: 24px;
+  top: 26px;
+}
 #header-2 .skin-switch.open .dropdown-menu {
   -webkit-transform: scale(1) rotate(0deg);
   -ms-transform: scale(1) rotate(0deg);
@@ -13974,11 +13984,11 @@ html.ismobile .page-loader {
     background: #2196f3;
   }
 }
-[data-current-skin="purple"] {
-  background-color: #9c27b0;
+[data-current-skin="lightred"] {
+  background-color: #de3a70;
 }
-[data-current-skin="purple"] .ss-icon {
-  color: #9c27b0;
+[data-current-skin="lightred"] .ss-icon {
+  color: #de3a70;
 }
 @media (max-width: 767px) {
   [data-current-skin="purple"] .ha-menu {
