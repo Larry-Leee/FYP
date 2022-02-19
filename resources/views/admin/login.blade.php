@@ -94,8 +94,8 @@
     <!--login-->
 
     <ul class="login-navigation">
-        <li data-block="#l-register" class="bgm-red">Register</li>
-        <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
+        <a type="button" href="/admin/register" class=" btn btn-primary">Register</a>
+        <!-- <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li> -->
     </ul>
     </div>
 
@@ -141,7 +141,7 @@
     </div>
 
     <!-- Forgot Password -->
-    <div class="lc-block" id="l-forget-password">
+    <!-- <div class="lc-block" id="l-forget-password">
         <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo
             lorem fringilla enim feugiat commodo sed ac lacus.</p>
 
@@ -156,9 +156,9 @@
 
         <ul class="login-navigation">
             <li data-block="#l-login" class="bgm-green">Login</li>
-            <li data-block="#l-register" class="bgm-red">Register</li>
+            <li data-block="/admin/register" class="bgm-red">Register</li>
         </ul>
-    </div>
+    </div> -->
 
     <!-- Older IE warning message -->
     <!--[if lt IE 9]>

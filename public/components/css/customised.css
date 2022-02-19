@@ -23,7 +23,7 @@ background-color: #e86341;
 .sw-toggled {
     text-align: center;
     margin-top: 15%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 video {  
     position: fixed;  
