@@ -31,7 +31,7 @@
     </script> -->
 </head>
 
-<body class="login-content sw-toggled">
+<body class="sw-toggled">
     <!-- Login -->
     <form class="user" method="POST" action="/admin/homepage" onsubmit="return checkForm()">
         {{csrf_field()}}
@@ -52,22 +52,35 @@
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                 <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Username" name="username" id="username">
+                    <input type="text" class="form-control" placeholder="Input your username" name="username"
+                        id="username">
                 </div>
-                <!-- <span class="input-group-addon">xxxxx</span> -->
             </div>
 
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
                 <div class="fg-line">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <input type="password" class="form-control" placeholder="Input your password" name="password"
+                        id="password">
                 </div>
             </div>
 
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="zmdi zmdi-camera-alt"></i></span>
                 <div class="fg-line">
-                    <input type="text" id="verifyCode" class="form-control" placeholder="Verify Code" name="code">
+                    <input type="text" id="lastName" class="form-control" placeholder="Last Name" name="lastname">
+                </div>
+            </div>
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="zmdi zmdi-camera-alt"></i></span>
+                <div class="fg-line">
+                    <input type="text" id="firstName" class="form-control" placeholder="First Name" name="firstname">
+                </div>
+            </div>
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="zmdi zmdi-camera-alt"></i></span>
+                <div class="fg-line">
+                    <input type="text" id="email" class="form-control" placeholder="Input your email" name="email">
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -76,12 +89,6 @@
             </div>
     </form>
     <button type="submit" class=" btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></button>
-    <!--login-->
-
-    <ul class="login-navigation">
-        <a type="button" href="/admin/register" class=" btn btn-primary">Register</a>
-        <!-- <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li> -->
-    </ul>
     </div>
 
     <!-- Register -->
