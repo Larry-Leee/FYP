@@ -37,7 +37,7 @@
                                     Fullscreen</a>
                             </li>
                             <li>
-                                <a href=""><i class="zmdi zmdi-settings"></i> Log Out</a>
+                                <a href="/admin/login"><i class="zmdi zmdi-settings"></i> Log Out</a>
                             </li>
                         </ul>
                     </li>
