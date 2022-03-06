@@ -8,6 +8,56 @@
     <title>Stoke Restaurants</title>
     <!-- Vendor CSS -->
     @include('main.public.style')
+    <!-- Area Chart -->
+    @include('main.public.script')
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2013', 1500, 400],
+                ['2014', 1170, 460],
+                ['2015', 660, 1120],
+                ['2016', 1030, 7540],
+                ['2016', 10330, 8540],
+                ['2017', 20310, 14140],
+                ['2018', 12430, 5440],
+                ['2019', 10330, 5340],
+                ['2020', 12030, 5440],
+                ['2021', 9030, 5406],
+                ['2022', 8030, 7540],
+                ['2023', 14030, 5840],
+                ['2024', 5030, 3540],
+                ['2025', 4030, 7540],
+                ['2026', 4030, 9040]
+            ]);
+
+            var options = {
+                title: 'Company Performance',
+                animation: {
+                    duration: 1000,
+                    easing: 'out',
+                },
+                hAxis: {
+                    title: 'Year',
+                    titleTextStyle: {
+                        color: '#333'
+                    }
+                },
+                vAxis: {
+                    minValue: 0,
+                    maxValue: 1000
+                }
+            };
+            var chart = new google.visualization.AreaChart(document.getElementById('curved-line-charts'));
+            chart.draw(data, options);
+        }
+    </script>
+    <!-- Area Chart Ends Here -->
 </head>
 
 <body>
@@ -26,7 +76,6 @@
             <li class="logo hidden-xs">
                 <a href="/admin/homepage"><b>Stoke Restaurants</b></a>
             </li>
-
             <li class="pull-right">
                 <ul class="top-menu">
                     <li class="dropdown">
@@ -42,27 +91,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- <li class="pull-right">
-                <div class="profile-menu">
-                    <a href="">
-                        <div class="profile-pic">
-                            <img src="/components/img/profile-pics/1.jpg" alt="">
-                        </div>
-                        <div class="profile-info">
-                            Larry
-                            <i class="zmdi zmdi-caret-down"></i>
-                        </div>
-                    </a>
-                    <ul class="main-menu">
-                        <li>
-                            <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </li> -->
             </li>
         </ul>
 
@@ -71,7 +99,6 @@
                 <input type="text" class="form-control" placeholder="Search...">
             </div>
         </div>
-
         <nav class="ha-menu">
             <ul>
                 <li class="waves-effect"><a href="index.html">Home</a></li>
@@ -108,37 +135,6 @@
             <div class="container-fluid">
                 <div class="block-header">
                     <h2>Dashboard</h2>
-
-                    <ul class="actions">
-                        <li>
-                            <a href="">
-                                <i class="zmdi zmdi-trending-up"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <i class="zmdi zmdi-check-all"></i>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="" data-toggle="dropdown">
-                                <i class="zmdi zmdi-more-vert"></i>
-                            </a>
-
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <a href="">Refresh</a>
-                                </li>
-                                <li>
-                                    <a href="">Manage Widgets</a>
-                                </li>
-                                <li>
-                                    <a href="">Widgets Settings</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
                 </div>
 
                 <div class="card col-24">
@@ -178,7 +174,7 @@
 
                     <div class="card-body">
                         <div class="chart-edge">
-                            <div id="curved-line-chart" class="flot-chart "></div>
+                            <div id="curved-line-charts" class="col-24" style="height: 300px;"></div>
                         </div>
                     </div>
                 </div>
@@ -817,12 +813,7 @@
         <![endif]-->
 
     <!-- Javascript Libraries -->
-    @include('main.public.script')
-
-    <!-- Placeholder for IE9 -->
-    <!--[if IE 9 ]>
-            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-        <![endif]-->
+    <!-- @include('main.public.script') -->
 
 
 </body>

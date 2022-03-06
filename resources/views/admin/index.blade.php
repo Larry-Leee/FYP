@@ -3,11 +3,11 @@
  * @Author: Li, Hang
  * @Date: 2021-04-28 20:11:20
  * @LastEditors: Li, Hang
- * @FilePath: /finalYearProject/resources/views/welcome/index.blade.php
+ * @FilePath: /finalYearProject/resources/views/admin/index.blade.php
  */
 * @Author: Larry
 * @Date: 2022-01-21 19:30:35
- * @LastEditTime: 2022-02-05 19:18:22
+ * @LastEditTime: 2022-03-05 17:46:38
 * @LastEditors: Please set LastEditors
 * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 * @FilePath: /finalYearProject/resources/views/welcome/index.blade.php
@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin/register/create">Sign Up</a></li>
                 </ul>
             </div>
         </div>

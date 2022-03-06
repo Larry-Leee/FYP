@@ -1,13 +1,3 @@
-<!-- /*
-/*
- * @Author: your name
- * @Date: 2022-01-22 23:17:33
- * @LastEditTime: 2022-02-05 12:33:55
- * @LastEditors: Li, Hang
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: /finalYearProject/resources/views/main/public/script.blade.php
- */
-*/ -->
 <script src="/components/vendors/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="/components/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -32,3 +22,4 @@
 <script src="/components/js/charts.js"></script>
 <script src="/components/js/functions.js"></script>
 <script src="/components/js/demo.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
