@@ -10,59 +10,116 @@
     @include('main.public.style')
     <!-- Area Chart -->
     @include('main.public.script')
+    <!-- Google Map API -->
     <script type="text/javascript">
-        google.charts.load('current', {
-            'packages': ['corechart']
+        google.charts.load("current", {
+            "packages": ["map"],
+            // Note: you will need to get a mapsApiKey for your project.
+            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+            "mapsApiKey": "AIzaSyDtxyx7iKJQG_CTnY5kbcRFOzP2zMpoQNo"
         });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses'],
-                ['2013', 1500, 400],
-                ['2014', 1170, 460],
-                ['2015', 660, 1120],
-                ['2016', 1030, 7540],
-                ['2016', 10330, 8540],
-                ['2017', 20310, 14140],
-                ['2018', 12430, 5440],
-                ['2019', 10330, 5340],
-                ['2020', 12030, 5440],
-                ['2021', 9030, 5406],
-                ['2022', 8030, 7540],
-                ['2023', 14030, 5840],
-                ['2024', 5030, 3540],
-                ['2025', 4030, 7540],
-                ['2026', 4030, 9040]
+                ['Lat', 'Long', 'Name'],
+                [53.02971, -2.17505, 'Work'],
+                [53.009068, -2.176138, 'University'],
+                [53.002666, -2.179404, 'Airport'],
+                [53.025780, -2.177390, 'Shopping'],
+                [53.007069, -2.184010, 'Carlton House'],
+                [53.003361, -2.183040, 'Tandoori Knights'],
+                [53.030788, -2.170000, 'The Masons Arms'],
+                [53.014380, -2.241610, 'Peaches']
+            ]);
+
+            var map = new google.visualization.Map(document.getElementById('res_map'));
+            map.draw(data, {
+                showTooltip: true,
+                showInfoWindow: true
+            });
+        }
+    </script>
+    <!-- Google Map Ends Here -->
+    <!-- Pie Chart-->
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                <?php echo $data;?>
             ]);
 
             var options = {
-                title: 'Company Performance',
-                animation: {
-                    duration: 1000,
-                    easing: 'out',
-                },
-                hAxis: {
-                    title: 'Year',
-                    titleTextStyle: {
-                        color: '#333'
-                    }
-                },
-                vAxis: {
-                    minValue: 0,
-                    maxValue: 1000
-                }
+                title: 'Restaurants Ratio',
+                pieHole: 0.4,
             };
-            var chart = new google.visualization.AreaChart(document.getElementById('curved-line-charts'));
+            var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
             chart.draw(data, options);
         }
     </script>
-    <!-- Area Chart Ends Here -->
+    <!-- Pie Chart Ends Here -->
+    <!-- Histogram Starts Here -->
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Dinosaur', 'Length'],
+                ['Acrocanthosaurus (top-spined lizard)', 12.2],
+                ['Albertosaurus (Alberta lizard)', 9.1],
+                ['Allosaurus (other lizard)', 12.2],
+                ['Apatosaurus (deceptive lizard)', 22.9],
+                ['Archaeopteryx (ancient wing)', 0.9],
+                ['Argentinosaurus (Argentina lizard)', 36.6],
+                ['Baryonyx (heavy claws)', 9.1],
+                ['Brachiosaurus (arm lizard)', 30.5],
+                ['Ceratosaurus (horned lizard)', 6.1],
+                ['Coelophysis (hollow form)', 2.7],
+                ['Compsognathus (elegant jaw)', 0.9],
+                ['Deinonychus (terrible claw)', 2.7],
+                ['Diplodocus (double beam)', 27.1],
+                ['Dromicelomimus (emu mimic)', 3.4],
+                ['Gallimimus (fowl mimic)', 5.5],
+                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
+                ['Megalosaurus (big lizard)', 7.9],
+                ['Microvenator (small hunter)', 1.2],
+                ['Ornithomimus (bird mimic)', 4.6],
+                ['Oviraptor (egg robber)', 1.5],
+                ['Plateosaurus (flat lizard)', 7.9],
+                ['Sauronithoides (narrow-clawed lizard)', 2.0],
+                ['Seismosaurus (tremor lizard)', 45.7],
+                ['Spinosaurus (spiny lizard)', 12.2],
+                ['Supersaurus (super lizard)', 30.5],
+                ['Tyrannosaurus (tyrant lizard)', 15.2],
+                ['Ultrasaurus (ultra lizard)', 30.5],
+                ['Velociraptor (swift robber)', 1.8]
+            ]);
+
+            var options = {
+                title: 'Lengths of dinosaurs, in meters',
+                legend: {
+                    position: 'none'
+                },
+            };
+
+            var chart = new google.visualization.Histogram(document.getElementById('histogram'));
+            chart.draw(data, options);
+        }
+    </script>
+    <!-- Histograms Ends Here -->
 </head>
 
 <body>
 
-    <header id="header-2" class="clearfix" data-current-skin="lightred">
+    <header id="header-2" class="clearfix" data-current-skin="teal">
         <!-- Make sure to change both class and data-current-skin when switching sking manually -->
         <ul class="header-inner clearfix">
             <li id="menu-trigger" data-trigger=".ha-menu" class="visible-xs">
@@ -138,9 +195,7 @@
                 </div>
 
                 <div class="card col-24">
-                    <div class="card-header">
-                        <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
-
+                    <!-- <div class="card-header">
                         <ul class="actions">
                             <li>
                                 <a href="">
@@ -170,15 +225,23 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
-
+                    </div> -->
                     <div class="card-body">
                         <div class="chart-edge">
-                            <div id="curved-line-charts" class="col-24" style="height: 300px;"></div>
+                            <div id="res_map" class="col-24" style="height: 550px;"></div>
                         </div>
                     </div>
                 </div>
-
+                <div class="card-body px-4 pb-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="p-3 border bg-light col-24" id="pieChart" style="height: 400px;"></div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light" id="histogram" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="mini-charts">
                     <div class="row">
                         <div class="col-sm-6 col-md-3">
@@ -574,7 +637,8 @@
                                         <label>
                                             <input type="checkbox">
                                             <i class="input-helper"></i>
-                                            <span>Curabitur egestas finibus sapien quis faucibusras bibendum ut justo at
+                                            <span>Curabitur egestas finibus sapien quis faucibusras bibendum ut
+                                                justo at
                                                 sagittis. In hac habitasse platea dictumst</span>
                                         </label>
                                     </div>
@@ -599,7 +663,8 @@
                                         <label>
                                             <input type="checkbox">
                                             <i class="input-helper"></i>
-                                            <span>Suspendisse potenti. Cras dolor augue, tincidunt sit amet lorem id,
+                                            <span>Suspendisse potenti. Cras dolor augue, tincidunt sit amet lorem
+                                                id,
                                                 blandit rutrum libero</span>
                                         </label>
                                     </div>
@@ -624,7 +689,8 @@
                                         <label>
                                             <input type="checkbox">
                                             <i class="input-helper"></i>
-                                            <span>Proin luctus dictum nisl id auctor. Nullam lobortis condimentum arcu
+                                            <span>Proin luctus dictum nisl id auctor. Nullam lobortis condimentum
+                                                arcu
                                                 sit amet gravida</span>
                                         </label>
                                     </div>
@@ -695,7 +761,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <div class="lv-title">Jonathan Morris</div>
-                                                <small class="lv-small">Nunc quis diam diamurabitur at dolor elementum,
+                                                <small class="lv-small">Nunc quis diam diamurabitur at dolor
+                                                    elementum,
                                                     dictum turpis vel</small>
                                             </div>
                                         </div>
@@ -707,7 +774,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <div class="lv-title">Fredric Mitchell Jr.</div>
-                                                <small class="lv-small">Phasellus a ante et est ornare accumsan at vel
+                                                <small class="lv-small">Phasellus a ante et est ornare accumsan at
+                                                    vel
                                                     magnauis blandit turpis at augue ultricies</small>
                                             </div>
                                         </div>
@@ -719,7 +787,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <div class="lv-title">Glenn Jecobs</div>
-                                                <small class="lv-small">Ut vitae lacus sem ellentesque maximus, nunc sit
+                                                <small class="lv-small">Ut vitae lacus sem ellentesque maximus, nunc
+                                                    sit
                                                     amet varius dignissim, dui est consectetur neque</small>
                                             </div>
                                         </div>
@@ -731,7 +800,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <div class="lv-title">Bill Phillips</div>
-                                                <small class="lv-small">Proin laoreet commodo eros id faucibus. Donec
+                                                <small class="lv-small">Proin laoreet commodo eros id faucibus.
+                                                    Donec
                                                     ligula quam, imperdiet vel ante placerat</small>
                                             </div>
                                         </div>
