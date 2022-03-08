@@ -18,7 +18,7 @@ class ChartController extends Controller
     //pie chart for restaurant type
     public function pieChart()
     {
-        $result = DB::select(DB::raw("SELECT COUNT(*) as total_type, r_type from restaurants group by r_type "));
+        $result = DB::select(DB::raw("SELECT COUNT(*) AS total_type, r_type FROM restaurants GROUP BY r_type "));
         $data = "";
         foreach ($result as $list) {
             $data.="['".$list->r_type."', ".$list->total_type."],";

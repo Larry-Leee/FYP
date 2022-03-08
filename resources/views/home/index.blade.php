@@ -23,14 +23,14 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Lat', 'Long', 'Name'],
-                [53.02971, -2.17505, 'Work'],
-                [53.009068, -2.176138, 'University'],
-                [53.002666, -2.179404, 'Airport'],
-                [53.025780, -2.177390, 'Shopping'],
-                [53.007069, -2.184010, 'Carlton House'],
+                [53.02971, -2.17505, 'Peaches'],
+                [53.009068, -2.176138, 'Hongs Kitchen'],
+                [53.002666, -2.179404, 'Regent Chinese '],
+                [53.025780, -2.177390, 'Shanghai City'],
+                [53.007069, -2.184010, 'The Birches Head'],
                 [53.003361, -2.183040, 'Tandoori Knights'],
                 [53.030788, -2.170000, 'The Masons Arms'],
-                [53.014380, -2.241610, 'Peaches']
+                [53.014380, -2.241610, 'Revolution']
             ]);
 
             var map = new google.visualization.Map(document.getElementById('res_map'));
@@ -55,7 +55,7 @@
             ]);
 
             var options = {
-                title: 'Restaurants Ratio',
+                title: 'Categories of Restaurants (%)',
                 pieHole: 0.4,
             };
             var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
@@ -104,7 +104,7 @@
             ]);
 
             var options = {
-                title: 'Lengths of dinosaurs, in meters',
+                // title: 'Lengths of dinosaurs, in meters',
                 legend: {
                     position: 'none'
                 },
@@ -191,7 +191,7 @@
         <section id="content">
             <div class="container-fluid">
                 <div class="block-header">
-                    <h2>Dashboard</h2>
+                    <h2>Find A Restaurant</h2>
                 </div>
 
                 <div class="card col-24">
@@ -249,8 +249,8 @@
                                 <div class="clearfix">
                                     <div class="chart stats-bar"></div>
                                     <div class="count">
-                                        <small>Website Traffics</small>
-                                        <h2>987,459</h2>
+                                        <small>Totoal Restaurants</small>
+                                        <h2>52</h2>
                                     </div>
                                 </div>
                             </div>
