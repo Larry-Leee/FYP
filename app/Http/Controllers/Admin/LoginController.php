@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2022-01-22 15:48:39
- * @LastEditTime: 2022-02-22 01:29:25
+ * @LastEditTime: 2022-03-08 23:17:45
  * @LastEditors: Li, Hang
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /finalYearProject/app/Http/Controllers/Admin/LoginController.php
@@ -63,5 +63,16 @@ class LoginController extends Controller
     {
         session(['users'=>null]);
         return redirect('admin/login');
+    }
+
+    public function pieChart()
+    {
+        $result = DB::select(DB::raw("SELECT COUNT(*) AS total_type, r_type FROM restaurants GROUP BY r_type "));
+        $data = "";
+        foreach ($result as $list) {
+            $data.="['".$list->r_type."', ".$list->total_type."],";
+        }
+        // echo $data;
+        return view('home.index', compact('data'));
     }
 }
