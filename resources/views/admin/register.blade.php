@@ -31,9 +31,9 @@
     </script> -->
 </head>
 
-<body class=" sw-toggled">
+<body class=" login-content">
     <!-- Login -->
-    <form class="user" method="POST" action="{{url('admin/register')}}" onsubmit="return checkForm()">
+    <form class="user" method="POST" action='/admin/homepage' onsubmit="return checkForm()">
         {{csrf_field()}}
         <div class="lc-block toggled opacity" id="l-login">
             @if(is_object($errors))

@@ -22,8 +22,8 @@
     <video class="video-tvc" id="video-tvc" autoplay loop="loop" muted>
         <source src="/components/video/loginBgVideo.mp4" type="video/mp4" />
     </video>
-
-    <!-- <script>
+    <!-- 
+    <script>
         function checkForm() {
             var nodex = document.getElementById("username");
             var reg = /^\s*$/; // if there is zero or more spaces, return true
