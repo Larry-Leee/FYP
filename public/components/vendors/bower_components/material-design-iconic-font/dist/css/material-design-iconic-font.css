@@ -390,6 +390,7 @@
 }
 .zmdi-collection-item-9-plus:before {
   content: '\f149';
+  font-size: 4rem;
 }
 .zmdi-collection-item-9:before {
   content: '\f14a';
@@ -1299,6 +1300,7 @@
 }
 .zmdi-plus:before {
   content: '\f278';
+  font-size: 4rem;
 }
 .zmdi-square-o:before {
   content: '\f279';

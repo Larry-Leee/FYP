@@ -19,8 +19,8 @@
     <link href="{{asset('/components/css/customised.css')}}" rel="stylesheet">
 
     <!-- Background Video -->
-    <video class="video-tvc" id="video-tvc" autoplay loop="loop" muted>
-        <source src="/components/video/loginBgVideo.mp4" type="video/mp4" />
+    <video playsinline="playsinline" class="video-tvc" id="video-tvc" autoplay="autoplay" loop="loop" muted>
+        <source src="/components/video/bg.mp4" type="video/mp4" />
     </video>
     <!-- 
     <script>
@@ -36,7 +36,7 @@
     </script> -->
 </head>
 
-<body class="sw-toggled opacity-25">
+<body class="sw-toggled">
     <!-- Login -->
     <form class="user" method="POST" action="/admin/homepage" onsubmit="return checkForm()">
         {{csrf_field()}}

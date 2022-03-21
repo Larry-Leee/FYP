@@ -23,3 +23,4 @@
 <script src="/components/js/functions.js"></script>
 <script src="/components/js/demo.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="/components/js/portfolio.js" type="text/javascript"></script>
