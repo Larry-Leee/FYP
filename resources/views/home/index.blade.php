@@ -186,6 +186,7 @@
             </div>
         </div>
     </header>
+    <!-- header end -->
 
     <section id="main" data-layout="layout-1">
         <section id="content">
@@ -222,8 +223,8 @@
                                     <div class="chart stats-bar-2"></div>
                                     <div class="count">
                                         <small>Total Review</small>
-                                        <a href="homepage" class="totalReview">
-                                            <h2>{{DB::table('review')->count('re_id')}}</h2>
+                                        <a href="comments" class="totalReview">
+                                            <h2>{{DB::table('posts')->count('p_id')}}</h2>
                                         </a>
                                     </div>
                                 </div>
@@ -246,29 +247,29 @@
                                     <h4 class="small font-weight-bold">Excellent <span
                                             class="float-right">{{DB::table('restaurants')->avg('r_id')}}%</span></h4>
                                     <div class="progress mb-5">
-                                        <div class="progress-bar bgm-pink" role="progressbar" style="width: 27%"
+                                        <div class="progress-bar bg-success progress-bar-animated" role="progressbar" style="width: 27%"
                                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <h4 class="small font-weight-bold">Very Good <span class="float-right">40%</span>
+                                    <h4 class="small font-weight-bold">Very Good <span class="float-right">10%</span>
                                     </h4>
                                     <div class="progress mb-5">
-                                        <div class="progress-bar bgm-deeporange" role="progressbar" style="width: 40%"
+                                        <div class="progress-bar bgm-green" role="progressbar" style="width: 10%"
                                             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <h4 class="small font-weight-bold">Average <span class="float-right">60%</span></h4>
                                     <div class="progress mb-5">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%"
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <h4 class="small font-weight-bold">Poor <span class="float-right">80%</span></h4>
+                                    <h4 class="small font-weight-bold">Poor <span class="float-right">15%</span></h4>
                                     <div class="progress mb-5">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 15%"
                                             aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <h4 class="small font-weight-bold">Terrible <span class="float-right">100</span>
+                                    <h4 class="small font-weight-bold">Terrible <span class="float-right">10%</span>
                                     </h4>
                                     <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 10%"
                                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
@@ -278,13 +279,14 @@
                 </div>
             </div>
         </section>
+        <!-- modal section -->
         <section class="page-section bg-light" id="portfolio" data-layout="layout-1">
-        <div class="container">
+        <div class="container p-4">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">The Most Popular Restaurants In Stoke </h2>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-4 col-sm-6 mb-4 p-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
@@ -294,12 +296,12 @@
                                 <img class="img-fluid" src="/components/img/portfolio/1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
+                                <div class="portfolio-caption-heading">Tandoori Knights</div>
                                 <div class="portfolio-caption-subheading text-muted">Illustration</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-4 col-sm-6 mb-4 p-4">
                         <!-- Portfolio item 2-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
@@ -314,7 +316,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-4 col-sm-6 mb-4 p-4">
                         <!-- Portfolio item 3-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
@@ -329,7 +331,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0 p-4">
                         <!-- Portfolio item 4-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
@@ -344,7 +346,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0 p-4">
                         <!-- Portfolio item 5-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
@@ -359,7 +361,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-4 col-sm-6 p-4">
                         <!-- Portfolio item 6-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
@@ -374,7 +376,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-4 col-sm-6 p-4">
                         <!-- Portfolio item 7-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal7">
@@ -389,7 +391,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-4 col-sm-6 p-4">
                         <!-- Portfolio item 8-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal8">
@@ -404,7 +406,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-4 col-sm-6 p-4">
                         <!-- Portfolio item 9-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal9">
@@ -435,7 +437,7 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <h2 class="text-uppercase">Tandoori Knights</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/1.jpg" alt="..." />
                                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
@@ -745,7 +747,7 @@
         Copyright &copy; 2015 Material Admin
 
         <ul class="f-menu">
-            <li><a href="">Home</a></li>
+            <li><a href="admin/homepage">Home</a></li>
             <li><a href="">Dashboard</a></li>
             <li><a href="">Reports</a></li>
             <li><a href="">Support</a></li>
