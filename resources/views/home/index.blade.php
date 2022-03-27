@@ -158,7 +158,7 @@
         </div>
         <nav class="ha-menu">
             <ul>
-                <li class="waves-effect"><a href="index.html">Home</a></li>
+                <li class="waves-effect"><a href="homepage">Home</a></li>
                 <li class="waves-effect"><a href="index.html">Dashboard</a></li>
                 <li class="dropdown">
                     <div class="waves-effect" data-toggle="dropdown">Restaurants Details</div>

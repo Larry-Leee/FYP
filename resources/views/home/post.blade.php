@@ -52,7 +52,7 @@
         </div>
         <nav class="ha-menu">
             <ul>
-                <li class="waves-effect"><a href="homepage">Home</a></li>
+                <li class="waves-effect"><a href="/admin/homepage">Home</a></li>
                 <li class="waves-effect"><a href="index.html">Dashboard</a></li>
                 <li class="dropdown">
                     <div class="waves-effect" data-toggle="dropdown">Restaurants Details</div>
@@ -363,7 +363,6 @@
                             <div class="pull-left">
                                 <img class="lv-img" src="/components/img/profile-pics/1.jpg" alt="">
                             </div>
-
                             <div class="media-body m-t-10">
 
                                 <h2>{{$val->user}}<small>Posted on {{$val->created_at}}</small>
