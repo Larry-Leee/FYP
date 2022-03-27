@@ -223,7 +223,7 @@
                                     <div class="chart stats-bar-2"></div>
                                     <div class="count">
                                         <small>Total Review</small>
-                                        <a href="comments" class="totalReview">
+                                        <a href="comments/index" class="totalReview">
                                             <h2>{{DB::table('posts')->count('p_id')}}</h2>
                                         </a>
                                     </div>
