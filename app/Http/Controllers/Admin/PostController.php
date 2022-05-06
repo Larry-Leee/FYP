@@ -1,4 +1,10 @@
 <?php
+/*
+ * @Author: Li, Hang
+ * @Date: 2022-03-27 00:00:39
+ * @LastEditors: Li, Hang
+ * @FilePath: /finalYearProject/app/Http/Controllers/Admin/PostController.php
+ */
 
 namespace App\Http\Controllers\Admin;
 
