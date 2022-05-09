@@ -39,7 +39,9 @@ class PostController extends Controller
         $post->comment = $data['comment'];
         $post->save();
 
-        return redirect('/admin/comments/'.$post->p_id);
+       
+
+        return redirect('/admin/comments/index');
     }
 
     //show

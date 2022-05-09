@@ -31,14 +31,10 @@
     </ul>
 
     <div class="search">
-        <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Search...">
-        </div>
     </div>
     <nav class="ha-menu">
         <ul>
-            <li class="waves-effect"><a href="homepage">Home</a></li>
-            <li class="waves-effect"><a href="index.html">Dashboard</a></li>
+            <li class="waves-effect"><a href="dashboard">Dashboard</a></li>
             <li class="dropdown">
                 <div class="waves-effect" data-toggle="dropdown">Restaurants Details</div>
                 <ul class="dropdown-menu">

@@ -52,8 +52,7 @@
         </div>
         <nav class="ha-menu">
             <ul>
-                <li class="waves-effect"><a href="/admin/homepage">Home</a></li>
-                <li class="waves-effect"><a href="index.html">Dashboard</a></li>
+                <li class="waves-effect"><a href="/admin/dashboard">Dashboard</a></li>
                 <li class="dropdown">
                     <div class="waves-effect" data-toggle="dropdown">Restaurants Details</div>
                     <ul class="dropdown-menu">
@@ -357,7 +356,7 @@
             </div>
             @foreach ($post as $val)
             <div class="row">
-                <div class="card col-md-12">
+                <div class="card col-md-8" style="margin-left: 250px;">
                     <div class="card-header">
                         <div class="media">
                             <div class="pull-left">
