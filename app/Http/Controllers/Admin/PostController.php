@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Post;
+use DB;
 
 class PostController extends Controller
 {
@@ -38,7 +39,6 @@ class PostController extends Controller
         $post = new Post();
         $post->comment = $data['comment'];
         $post->save();
-
        
 
         return redirect('/admin/comments/index');

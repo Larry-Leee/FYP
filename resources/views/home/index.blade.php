@@ -40,9 +40,9 @@
             });
         }
     </script>
-    <!-- Google Map Ends Here -->
+    <script src="/components/js/echarts.js"></script>
     <!-- Pie Chart-->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         google.charts.load("current", {
             packages: ["corechart"]
         });
@@ -65,60 +65,8 @@
             var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
             chart.draw(data, options);
         }
-    </script>
-    <!-- Pie Chart Ends Here -->
-    <!-- Histogram Starts Here -->
-    <!-- <script type="text/javascript">
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Dinosaur', 'Length'],
-                ['Acrocanthosaurus (top-spined lizard)', 12.2],
-                ['Albertosaurus (Alberta lizard)', 9.1],
-                ['Allosaurus (other lizard)', 12.2],
-                ['Apatosaurus (deceptive lizard)', 22.9],
-                ['Archaeopteryx (ancient wing)', 0.9],
-                ['Argentinosaurus (Argentina lizard)', 36.6],
-                ['Baryonyx (heavy claws)', 9.1],
-                ['Brachiosaurus (arm lizard)', 30.5],
-                ['Ceratosaurus (horned lizard)', 6.1],
-                ['Coelophysis (hollow form)', 2.7],
-                ['Compsognathus (elegant jaw)', 0.9],
-                ['Deinonychus (terrible claw)', 2.7],
-                ['Diplodocus (double beam)', 27.1],
-                ['Dromicelomimus (emu mimic)', 3.4],
-                ['Gallimimus (fowl mimic)', 5.5],
-                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
-                ['Megalosaurus (big lizard)', 7.9],
-                ['Microvenator (small hunter)', 1.2],
-                ['Ornithomimus (bird mimic)', 4.6],
-                ['Oviraptor (egg robber)', 1.5],
-                ['Plateosaurus (flat lizard)', 7.9],
-                ['Sauronithoides (narrow-clawed lizard)', 2.0],
-                ['Seismosaurus (tremor lizard)', 45.7],
-                ['Spinosaurus (spiny lizard)', 12.2],
-                ['Supersaurus (super lizard)', 30.5],
-                ['Tyrannosaurus (tyrant lizard)', 15.2],
-                ['Ultrasaurus (ultra lizard)', 30.5],
-                ['Velociraptor (swift robber)', 1.8]
-            ]);
-
-            var options = {
-                // title: 'Lengths of dinosaurs, in meters',
-                legend: {
-                    position: 'none'
-                },
-            };
-
-            var chart = new google.visualization.Histogram(document.getElementById('histogram'));
-            chart.draw(data, options);
-        }
     </script> -->
-    <!-- Histograms Ends Here -->
+    <!-- Pie Chart Ends Here -->
 </head>
 
 <body>
@@ -169,46 +117,196 @@
                     </div>
                 </div>
                 <div class="card-body px-4 pb-4">
-                    <div class="row gx-5">
-                        <div class="col">
-                            <div class="p-3 border bg-light col-24" id="pieChart" style="height: 400px;"></div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card shadow">
+                                <div class="card-header py-3">
+                                    <h4 class="m-0 font-weight-bold">Restaurants Type</h4>
+                                </div>
+                                <div class="p-25 p-t-25 border bg-light col-24" style="width:689px;height:520px;"
+                                    id="categorise">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('categorise'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        legend: {
+                                            top: '5%',
+                                            left: 'center'
+                                        },
+                                        series: [{
+                                            type: 'pie',
+                                            radius: ['40%', '70%'],
+                                            avoidLabelOverlap: false,
+                                            itemStyle: {
+                                                borderRadius: 10,
+                                                borderColor: '#fff',
+                                                borderWidth: 2
+                                            },
+                                            label: {
+                                                show: false,
+                                                position: 'center'
+                                            },
+                                            emphasis: {
+                                                label: {
+                                                    show: true,
+                                                    fontSize: '30',
+                                                    fontWeight: 'bold'
+                                                }
+                                            },
+                                            labelLine: {
+                                                show: false
+                                            },
+                                            data: [{
+                                                    value: 6,
+                                                    name: 'India'
+                                                },
+                                                {
+                                                    value: 2,
+                                                    name: 'British'
+                                                },
+                                                {
+                                                    value: 10,
+                                                    name: 'Chinese'
+                                                },
+                                                {
+                                                    value: 4,
+                                                    name: 'Turkish'
+                                                },
+                                                {
+                                                    value: 5,
+                                                    name: 'Italian'
+                                                },
+                                                {
+                                                    value: 4,
+                                                    name: 'Italian'
+                                                }
+                                            ]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
+                            </div>
                         </div>
-                        <div class="col">
+                        <div class="col-6">
                             <div class="card shadow">
                                 <div class="card-header py-3">
                                     <h4 class="m-0 font-weight-bold">Restaurant Overview</h4>
                                 </div>
-                                <div class="p-25 p-t-25 border bg-light col-24" style="height: 355px;">
-                                    <h4 class="small font-weight-bold">Excellent <span
-                                            class="float-right">{{DB::table('restaurants')->avg('r_id')}}%</span></h4>
-                                    <div class="progress mb-5">
-                                        <div class="progress-bar bg-success progress-bar-animated" role="progressbar"
-                                            style="width: 27%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                        </div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Very Good <span class="float-right">10%</span>
-                                    </h4>
-                                    <div class="progress mb-5">
-                                        <div class="progress-bar bgm-green" role="progressbar" style="width: 10%"
-                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Average <span class="float-right">60%</span></h4>
-                                    <div class="progress mb-5">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Poor <span class="float-right">15%</span></h4>
-                                    <div class="progress mb-5">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 15%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Terrible <span class="float-right">10%</span>
-                                    </h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 10%"
-                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
+                                <div class="p-25 p-t-25 border bg-light col-24" style="width:689px;height:520px;"
+                                    id="overview"></div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('overview'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Tandoori Knights', 'The Masons Arms', 'Peaches', 'Yu-ma-mi',
+                                                'Hongs kitchen', 'Shanghai City Restaurant',
+                                                'Regent Chinese Restaurant', 'Panda Kitchen',
+                                                'Saracens Head Steakhouse'
+                                            ],
+                                            orient: 'horizontal',
+                                            bottom: 5,
+                                            type: 'scroll',
+                                            textStyle: {
+                                                color: '#000',
+                                                fontSize: 14
+                                            },
+                                            selectedMode: 'single'
+                                        },
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100,
+                                                    color: '#000'
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100,
+                                                    color: '#000'
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100,
+                                                    color: '#000'
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100,
+                                                    color: '#000'
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100,
+                                                    color: '#000'
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100,
+                                                    color: '#000'
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            symbol: 'none',
+                                            data: [{
+                                                    value: [88, 90, 95, 78, 99, 90],
+                                                    name: 'Tandoori Knights'
+                                                },
+                                                {
+                                                    value: [89, 98, 70, 50, 42, 50],
+                                                    name: 'The Masons Arms'
+                                                },
+                                                {
+                                                    value: [100, 67, 76, 85, 99, 93],
+                                                    name: 'Peaches'
+                                                },
+                                                {
+                                                    value: [40, 57, 36, 55, 79, 20],
+                                                    name: 'Yu-ma-mi'
+                                                },
+                                                {
+                                                    value: [81, 76, 97, 95, 99, 97],
+                                                    name: 'Hongs kitchen'
+                                                },
+                                                {
+                                                    value: [77, 87, 79, 60, 93, 83],
+                                                    name: 'Shanghai City Restaurant'
+                                                },
+                                                {
+                                                    value: [96, 89, 91, 94, 93, 86],
+                                                    name: 'Regent Chinese Restaurant'
+                                                },
+                                                {
+                                                    value: [65, 67, 76, 85, 99, 93],
+                                                    name: 'Panda Kitchen'
+                                                },
+                                                {
+                                                    value: [92, 97, 89, 60, 92, 78],
+                                                    name: 'Saracens Head Steakhouse'
+                                                }
+
+                                            ]
+                                        }]
+                                    };
+                                    option && myChart.setOption(option);
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -233,7 +331,6 @@
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Tandoori Knights</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
                             </div>
                         </div>
                     </div>
@@ -247,8 +344,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/2.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                                <div class="portfolio-caption-heading">The Masons Arms</div>
                             </div>
                         </div>
                     </div>
@@ -262,8 +358,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/3.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                                <div class="portfolio-caption-heading">Peaches</div>
                             </div>
                         </div>
                     </div>
@@ -277,8 +372,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/4.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                                <div class="portfolio-caption-heading">Yu-ma-mi</div>
                             </div>
                         </div>
                     </div>
@@ -292,8 +386,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/5.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                                <div class="portfolio-caption-heading">Hong's kitchen</div>
                             </div>
                         </div>
                     </div>
@@ -307,8 +400,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/6.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                                <div class="portfolio-caption-heading">Shanghai City Restaurant</div>
                             </div>
                         </div>
                     </div>
@@ -322,8 +414,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/6.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                                <div class="portfolio-caption-heading">Regent Chinese Restaurant</div>
                             </div>
                         </div>
                     </div>
@@ -337,8 +428,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/6.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                                <div class="portfolio-caption-heading">Panda Kitchen</div>
                             </div>
                         </div>
                     </div>
@@ -352,8 +442,7 @@
                                 <img class="img-fluid" src="/components/img/portfolio/6.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                                <div class="portfolio-caption-heading">Saracen's Head Steakhouse</div>
                             </div>
                         </div>
                     </div>
@@ -377,26 +466,73 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Tandoori Knights</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/1.jpg"
-                                    alt="..." />
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal1">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal1'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Tandoori Knights']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [88, 90, 95, 78, 99, 90],
+                                                name: 'Tandoori Knights'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Threads
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Illustration
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -417,28 +553,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/2.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">The Masons Arms</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal2">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal2'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['The Masons Arms']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [89, 98, 70, 50, 42, 50],
+                                                name: 'The Masons Arms'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Explore
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Graphic Design
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -459,28 +641,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/3.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">Peaches</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal3">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal3'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Peaches']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [100, 67, 76, 85, 99, 93],
+                                                name: 'Peaches'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Finish
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Identity
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -501,28 +729,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/4.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">Yu-ma-mi</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal4">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal4'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Peaches']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [40, 57, 36, 55, 79, 20],
+                                                name: 'Yu-ma-mi'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Lines
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Branding
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -543,28 +817,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/5.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">Hong's kitchen</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal5">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal5'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Peaches']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [40, 57, 36, 55, 79, 20],
+                                                name: 'Yu-ma-mi'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Southwest
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Website Design
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -585,28 +905,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/6.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">Shanghai City Restaurant</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal6">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal6'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Peaches']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [77, 87, 79, 60, 93, 83],
+                                                name: 'Shanghai City Restaurant'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -627,28 +993,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/6.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">Regent Chinese Restaurant</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal7">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal7'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Peaches']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [96, 89, 91, 94, 93, 86],
+                                                name: 'Regent Chinese Restaurant'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -669,28 +1081,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/6.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">Panda Kitchen</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal8">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal8'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Peaches']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [65, 67, 76, 85, 99, 93],
+                                                name: 'Panda Kitchen'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -711,28 +1169,74 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="/components/img/portfolio/6.jpg"
-                                    alt="..." />
+                                <h2 class="text-uppercase">Saracen's Head Steakhouse</h2>
+                                <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal9">
+                                </div>
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('modal9'));
+                                    var option;
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                                restore: {},
+                                                saveAsImage: {}
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Peaches']
+                                        },
+
+                                        radar: {
+                                            // shape: 'circle',
+                                            indicator: [{
+                                                    name: 'Services',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Envrionment',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Price',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Location',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Staffs',
+                                                    max: 100
+                                                },
+                                                {
+                                                    name: 'Dishes',
+                                                    max: 100
+                                                }
+                                            ]
+                                        },
+                                        series: [{
+                                            areaStyle: {},
+                                            type: 'radar',
+                                            data: [{
+                                                value: [92, 97, 89, 60, 92, 78],
+                                                name: 'Saracens Head Steakhouse'
+                                            }]
+                                        }]
+                                    };
+
+                                    option && myChart.setOption(option);
+                                </script>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
                                     nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -764,50 +1268,6 @@
             <p>Please wait...</p>
         </div>
     </div>
-
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-            <div class="ie-warning">
-                <h1 class="c-white">Warning!!</h1>
-                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-                <div class="iew-container">
-                    <ul class="iew-download">
-                        <li>
-                            <a href="http://www.google.com/chrome/">
-                                <img src="img/browsers/chrome.png" alt="">
-                                <div>Chrome</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.mozilla.org/en-US/firefox/new/">
-                                <img src="img/browsers/firefox.png" alt="">
-                                <div>Firefox</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.opera.com">
-                                <img src="img/browsers/opera.png" alt="">
-                                <div>Opera</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.apple.com/safari/">
-                                <img src="img/browsers/safari.png" alt="">
-                                <div>Safari</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                                <img src="img/browsers/ie.png" alt="">
-                                <div>IE (New)</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <p>Sorry for the inconvenience!</p>
-            </div>   
-        <![endif]-->
-
     <!-- Javascript Libraries -->
     <!-- @include('main.public.script') -->
 

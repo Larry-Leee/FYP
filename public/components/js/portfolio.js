@@ -50,8 +50,8 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
+    // new SimpleLightbox({
+    //     elements: '#portfolio a.portfolio-box'
+    // });
 
 });

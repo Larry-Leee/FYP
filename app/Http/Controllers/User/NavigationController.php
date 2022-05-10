@@ -10,6 +10,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Models\Restaurants;
+use DB;
 
 class NavigationController extends Controller
 {
@@ -17,5 +19,13 @@ class NavigationController extends Controller
     public function dashboard()
     {
         return view('home.index');
+    }
+    //restaurants details controller
+    public function details()
+    {
+        $resdata = Restaurants::paginate();
+
+        // dd($resdata);
+        return view('home.detail', compact('resdata'));
     }
 }

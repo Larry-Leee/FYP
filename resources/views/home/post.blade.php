@@ -46,23 +46,14 @@
         </ul>
 
         <div class="search">
-            <div class="fg-line">
-                <input type="text" class="form-control" placeholder="Search...">
-            </div>
         </div>
         <nav class="ha-menu">
             <ul>
                 <li class="waves-effect"><a href="/admin/dashboard">Dashboard</a></li>
-                <li class="dropdown">
-                    <div class="waves-effect" data-toggle="dropdown">Restaurants Details</div>
-                    <ul class="dropdown-menu">
-                        <li><a href="widget-templates.html">Templates</a></li>
-                        <li><a href="widgets.html">Widgets</a></li>
-                    </ul>
-                </li>
+                <li class="waves-effect"><a href="/admin/restauratns-details">Dashboard</a></li>
                 <li class="waves-effect"><a href="index.html">Price Comparison</a></li>
                 <li class="waves-effect"><a href="index.html">Meal Preview</a></li>
-                <li class="waves-effect"><a href="index.html">Help Us</a></li>
+                <li class="waves-effect"><a href="comments/index">Share Your Experience</a></li>
             </ul>
         </nav>
         <div class="skin-switch dropdown hidden-xs">
@@ -81,242 +72,6 @@
     </header>
     <!--header ends -->
     <section id="main">
-        <aside id="sidebar" class="sidebar c-overflow">
-            <div class="profile-menu">
-                <a href="">
-                    <div class="profile-pic">
-                        <img src="/components/img/profile-pics/1.jpg" alt="">
-                    </div>
-
-                    <div class="profile-info">
-                        Malinda Hollaway
-
-                        <i class="zmdi zmdi-caret-down"></i>
-                    </div>
-                </a>
-
-                <ul class="main-menu">
-                    <li>
-                        <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
-                    </li>
-                </ul>
-            </div>
-
-            <ul class="main-menu">
-                <li><a href="index.html"><i class="zmdi zmdi-home"></i> Home</a></li>
-                <li class="sub-menu">
-                    <a href=""><i class="zmdi zmdi-view-compact"></i> Headers</a>
-
-                    <ul>
-                        <li><a href="textual-menu.html">Textual menu</a></li>
-                        <li><a href="image-logo.html">Image logo</a></li>
-                        <li><a href="top-mainmenu.html">Mainmenu on top</a></li>
-                    </ul>
-                </li>
-                <li><a href="typography.html"><i class="zmdi zmdi-format-underlined"></i> Typography</a></li>
-                <li class="sub-menu">
-                    <a href=""><i class="zmdi zmdi-widgets"></i> Widgets</a>
-
-                    <ul>
-                        <li><a href="widget-templates.html">Templates</a></li>
-                        <li><a href="widgets.html">Widgets</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href=""><i class="zmdi zmdi-view-list"></i> Tables</a>
-
-                    <ul>
-                        <li><a href="tables.html">Normal Tables</a></li>
-                        <li><a href="data-tables.html">Data Tables</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href=""><i class="zmdi zmdi-collection-text"></i> Forms</a>
-
-                    <ul>
-                        <li><a href="form-elements.html">Basic Form Elements</a></li>
-                        <li><a href="form-components.html">Form Components</a></li>
-                        <li><a href="form-examples.html">Form Examples</a></li>
-                        <li><a href="form-validations.html">Form Validation</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href=""><i class="zmdi zmdi-swap-alt"></i>User Interface</a>
-                    <ul>
-                        <li><a href="colors.html">Colors</a></li>
-                        <li><a href="animations.html">Animations</a></li>
-                        <li><a href="box-shadow.html">Box Shadow</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="alerts.html">Alerts</a></li>
-                        <li><a href="preloaders.html">Preloaders</a></li>
-                        <li><a href="notification-dialog.html">Notifications & Dialogs</a></li>
-                        <li><a href="media.html">Media</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="other-components.html">Others</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href=""><i class="zmdi zmdi-trending-up"></i>Charts</a>
-                    <ul>
-                        <li><a href="flot-charts.html">Flot Charts</a></li>
-                        <li><a href="other-charts.html">Other Charts</a></li>
-                    </ul>
-                </li>
-                <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
-                <li class="sub-menu">
-                    <a href=""><i class="zmdi zmdi-image"></i>Photo Gallery</a>
-                    <ul>
-                        <li><a href="photos.html">Default</a></li>
-                        <li><a href="photo-timeline.html">Timeline</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="generic-classes.html"><i class="zmdi zmdi-layers"></i> Generic Classes</a></li>
-                <li class="sub-menu active toggled">
-                    <a href=""><i class="zmdi zmdi-collection-item"></i> Sample Pages</a>
-                    <ul>
-
-                        <li><a href="profile-about.html">Profile</a></li>
-                        <li><a href="list-view.html">List View</a></li>
-                        <li><a href="messages.html">Messages</a></li>
-                        <li><a href="pricing-table.html">Pricing Table</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                        <li><a class="active" href="wall.html">Wall</a></li>
-                        <li><a href="invoice.html">Invoice</a></li>
-                        <li><a href="login.html">Login and Sign Up</a></li>
-                        <li><a href="lockscreen.html">Lockscreen</a></li>
-                        <li><a href="404.html">Error 404</a></li>
-
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="form-examples.html"><i class="zmdi zmdi-menu"></i> 3 Level Menu</a>
-
-                    <ul>
-                        <li><a href="form-elements.html">Level 2 link</a></li>
-                        <li><a href="form-components.html">Another level 2 Link</a></li>
-                        <li class="sub-menu">
-                            <a href="form-examples.html">I have children too</a>
-
-                            <ul>
-                                <li><a href="">Level 3 link</a></li>
-                                <li><a href="">Another Level 3 link</a></li>
-                                <li><a href="">Third one</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="form-validations.html">One more 2</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </aside>
-
-        <aside id="chat" class="sidebar c-overflow">
-
-            <div class="chat-search">
-                <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Search People">
-                </div>
-            </div>
-
-            <div class="listview">
-                <a class="lv-item" href="">
-                    <div class="media">
-                        <div class="pull-left p-relative">
-                            <img class="lv-img-sm" src="/components/img/profile-pics/2.jpg" alt="">
-                            <i class="chat-status-busy"></i>
-                        </div>
-                        <div class="media-body">
-                            <div class="lv-title">Jonathan Morris</div>
-                            <small class="lv-small">Available</small>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="lv-item" href="">
-                    <div class="media">
-                        <div class="pull-left">
-                            <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
-                        </div>
-                        <div class="media-body">
-                            <div class="lv-title">David Belle</div>
-                            <small class="lv-small">Last seen 3 hours ago</small>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="lv-item" href="">
-                    <div class="media">
-                        <div class="pull-left p-relative">
-                            <img class="lv-img-sm" src="/components/img/profile-pics/3.jpg" alt="">
-                            <i class="chat-status-online"></i>
-                        </div>
-                        <div class="media-body">
-                            <div class="lv-title">Fredric Mitchell Jr.</div>
-                            <small class="lv-small">Availble</small>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="lv-item" href="">
-                    <div class="media">
-                        <div class="pull-left p-relative">
-                            <img class="lv-img-sm" src="img/profile-pics/4.jpg" alt="">
-                            <i class="chat-status-online"></i>
-                        </div>
-                        <div class="media-body">
-                            <div class="lv-title">Glenn Jecobs</div>
-                            <small class="lv-small">Availble</small>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="lv-item" href="">
-                    <div class="media">
-                        <div class="pull-left">
-                            <img class="lv-img-sm" src="img/profile-pics/5.jpg" alt="">
-                        </div>
-                        <div class="media-body">
-                            <div class="lv-title">Bill Phillips</div>
-                            <small class="lv-small">Last seen 3 days ago</small>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="lv-item" href="">
-                    <div class="media">
-                        <div class="pull-left">
-                            <img class="lv-img-sm" src="img/profile-pics/6.jpg" alt="">
-                        </div>
-                        <div class="media-body">
-                            <div class="lv-title">Wendy Mitchell</div>
-                            <small class="lv-small">Last seen 2 minutes ago</small>
-                        </div>
-                    </div>
-                </a>
-                <a class="lv-item" href="">
-                    <div class="media">
-                        <div class="pull-left p-relative">
-                            <img class="lv-img-sm" src="img/profile-pics/7.jpg" alt="">
-                            <i class="chat-status-busy"></i>
-                        </div>
-                        <div class="media-body">
-                            <div class="lv-title">Teena Bell Ann</div>
-                            <small class="lv-small">Busy</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </aside>
 
         <div class="col-md-12">
             <div class="card wall-posting">
@@ -356,7 +111,7 @@
             </div>
             @foreach ($post as $val)
             <div class="row">
-                <div class="card col-md-8" style="margin-left: 250px;">
+                <div class="card col-md-9" style="margin-left: 200px;">
                     <div class="card-header">
                         <div class="media">
                             <div class="pull-left">
@@ -371,7 +126,7 @@
                     </div>
 
                     <div class="card-body card-padding">
-                        <p>
+                        <p style="font-family: Franklin Gothic Medium; font-size: 15px;">
                             {{$val->comment}}
                         </p>
                         <div class="wall-img-preview lightbox clearfix">
@@ -385,77 +140,6 @@
             </div>
         </div>
         @endforeach
-
-        <div class="col-md-4 hidden-sm">
-
-            <div class="pl-body">
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/1.png" alt="">
-                    </a>
-                </div>
-
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/2.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/3.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/4.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/5.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/6.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/7.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/8.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/9.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/1.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/2.png" alt="">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="">
-                        <img src="img/headers/square/3.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-
-    </section>
     </section>
 
     <footer id="footer">
