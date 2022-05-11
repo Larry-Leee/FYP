@@ -1,4 +1,4 @@
-<header id="header-2" class="clearfix" data-current-skin="teal">
+<header id="header-2" class="clearfix" data-current-skin="orange">
     <!-- Make sure to change both class and data-current-skin when switching sking manually -->
     <ul class="header-inner clearfix">
         <li id="menu-trigger" data-trigger=".ha-menu" class="visible-xs">

@@ -181,8 +181,8 @@
                                                     name: 'Italian'
                                                 },
                                                 {
-                                                    value: 4,
-                                                    name: 'Italian'
+                                                    value: 10,
+                                                    name: 'Thai'
                                                 }
                                             ]
                                         }]
