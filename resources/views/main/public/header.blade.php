@@ -10,7 +10,7 @@
         </li>
 
         <li class="logo hidden-xs">
-            <a href="/admin/homepage"><b>Stoke Restaurants</b></a>
+            <a href="/admin/dashboard"><b>Stoke Restaurants</b></a>
         </li>
         <li class="pull-right">
             <ul class="top-menu">
@@ -36,8 +36,7 @@
         <ul>
             <li class="waves-effect"><a href="dashboard">Dashboard</a></li>
             <li class="waves-effect"><a href="restauratns-details">Restaurant Details</a></li>
-            <li class="waves-effect"><a href="index.html">Price Comparison</a></li>
-            <li class="waves-effect"><a href="index.html">Meal Preview</a></li>
+            <li class="waves-effect"><a href="meal-preview">Meal Preview</a></li>
             <li class="waves-effect"><a href="comments/index">Share Your Experience</a></li>
         </ul>
     </nav>

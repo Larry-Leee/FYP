@@ -11,6 +11,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Restaurants;
+use App\Http\Models\Meals;
 use DB;
 
 class NavigationController extends Controller
@@ -27,5 +28,13 @@ class NavigationController extends Controller
 
         // dd($resdata);
         return view('home.detail', compact('resdata'));
+    }
+    //meal preview controller
+    public function meal()
+    {
+        $mealdata = DB::select(DB::raw("SELECT restaurants.r_name, meal.m_name, meal.m_price, meal.m_ingredient, meal.m_allergies, meal.style  FROM meal LEFT JOIN restaurants ON restaurants.r_id = meal.r_id"));
+
+        // dd($mealdata);
+        return view('home.preview', compact('mealdata'));
     }
 }

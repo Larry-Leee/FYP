@@ -25,7 +25,7 @@
             </li>
 
             <li class="logo hidden-xs">
-                <a href="/admin/homepage"><b>Stoke Restaurants</b></a>
+                <a href="/admin/dashboard"><b>Stoke Restaurants</b></a>
             </li>
             <li class="pull-right">
                 <ul class="top-menu">
@@ -70,45 +70,50 @@
         </div>
     </header>
     <!--header ends -->
+    <!-- modal section -->
     <section id="main">
         <div class="row">
-            @foreach($resdata as $val)
+            @foreach($mealdata as $v)
             <div class="card col-lg-4 col-sm-6 mb-4 p-4">
                 <div class=" card-header">
-
-                    <h2><b>{{$val->r_name}}</b></h2>
-
+                    <h2><b>{{$v->m_name}}</b></h2>
+                    <small>Provided by: {{$v->r_name}}</small>
                 </div>
 
                 <div class="card-body">
-                    <ul class="tab-nav tn-justified tn-icon" role="tablist">
-                        <li role="presentation" class="active">
-                            <a class="col-sx-4" href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab">
-                                <i class="zmdi zmdi-home icon-tab"></i>
-                            </a>
-                        </li>
-                    </ul>
-
                     <div class="tab-content p-20">
                         <div role="tabpanel" class="tab-pane animated fadeIn in active" id="tab-1">
-                            <img src="/components/img/portfolio/3.jpg" class="img-responsive m-b-15" alt="">
-                            <div class="pmo-contact">
-                                <ul>
-                                    <li class="ng-binding"><i class="zmdi zmdi-phone"></i>{{$val->r_contacts}}</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-pin"></i>{{$val->r_location}}</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-email"></i>{{$val->r_postcode}}
-                                    </li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-cutlery"></i> {{$val->r_type}}</li>
-                                </ul>
+                            <img src="/components/img/portfolio/8.jpg" class="img-responsive m-b-15" alt="">
+                            <div class="row">
+                                <div class="pmo-contact">
+                                    <ul>
+                                        <a href="/admin/restauratns-details" class="totalReview">
+                                            <li class="ng-binding"><i class="zmdi zmdi-balance"></i><b>Provider :
+                                                </b>{{$v->r_name}}
+                                            </li>
+                                        </a>
+                                        <li class="ng-binding"><i class="zmdi zmdi-cocktail"></i><b>Dishes :</b>
+                                            {{$v->m_name}}</li>
+                                        <li class="ng-binding"><i class="zmdi zmdi-money"></i><b>Price :</b>
+                                            {{$v->m_price}} £
+                                        </li>
+                                        <li class="ng-binding"><i class="zmdi zmdi-cutlery"></i><b>Ingredient :</b>
+                                            {{$v->m_ingredient}}
+                                        </li>
+                                        <li class="ng-binding"><i class="zmdi zmdi-close-circle"></i><b>Allergies :</b>
+                                            {{$v->m_allergies}}</li>
+                                        <li class="ng-binding"><i class="zmdi zmdi-label-heart"></i><b>Special Diet
+                                                :</b>
+                                            {{$v->style}}
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             @endforeach
-        </div>
-        <div class="pagination">
-            {{$resdata->links()}}
         </div>
     </section>
     <footer id="footer">

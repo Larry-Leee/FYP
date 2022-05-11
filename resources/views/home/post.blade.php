@@ -50,10 +50,9 @@
         <nav class="ha-menu">
             <ul>
                 <li class="waves-effect"><a href="/admin/dashboard">Dashboard</a></li>
-                <li class="waves-effect"><a href="/admin/restauratns-details">Dashboard</a></li>
-                <li class="waves-effect"><a href="index.html">Price Comparison</a></li>
-                <li class="waves-effect"><a href="index.html">Meal Preview</a></li>
-                <li class="waves-effect"><a href="comments/index">Share Your Experience</a></li>
+                <li class="waves-effect"><a href="/admin/restauratns-details">Restaurant Details</a></li>
+                <li class="waves-effect"><a href="/admin/meal-preview">Meal Preview</a></li>
+                <li class="waves-effect"><a href="/admin/comments/index">Share Your Experience</a></li>
             </ul>
         </nav>
         <div class="skin-switch dropdown hidden-xs">
@@ -74,7 +73,7 @@
     <section id="main">
 
         <div class="col-md-12">
-            <div class="card wall-posting">
+            <div class="card wall-posting col-9" style="margin-left:190px;">
                 <div class="card-body card-padding">
                     <form class="wp-text" action="/admin/comments/" method="POST">
                         @csrf

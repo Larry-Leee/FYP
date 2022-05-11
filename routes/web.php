@@ -33,4 +33,5 @@ Route::group(['prefix'=>'admin'], function () {
     Route::any('/homepage', 'Admin\LoginController@receive')->name('homepage');
     Route::any('/dashboard', 'User\NavigationController@dashboard');
     Route::get('/restauratns-details', 'User\NavigationController@details');
+    Route::get('/meal-preview', 'User\NavigationController@meal');
 });

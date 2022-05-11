@@ -450,8 +450,6 @@
             </div>
         </section>
     </section>
-    <!-- test section -->
-    <!-- test section end -->
     <!-- modal popup -->
     <div class="portfolio-modal modal fade modal-fullscreen" id="portfolioModal1" tabindex="-1" role="dialog"
         aria-hidden="true" style="left:150px">
@@ -465,7 +463,6 @@
                             <div class="modal-body">
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Tandoori Knights</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <div class="img-fluid d-block mx-auto" style="width:460px;height:400px;" id="modal1">
                                 </div>
                                 <script type="text/javascript">
