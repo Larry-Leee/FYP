@@ -66,11 +66,11 @@ class UserController extends Controller
         //3. get information and validate
         $input = $request->except('_token');
         $input['password'] = Crypt::encrypt($input['password']);
-        // dd($input);
-        // $validator = Validator::make(Input::all(), $rules, $msg); //validate information
-        // if ($validator->fails()) {
-        //     return Redirect::back()->withErrors($validator);
-        // }
+        dd($input);
+        $validator = Validator::make(Input::all(), $rules, $msg); //validate information
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
         $submit = Account::create(['username' => $input['username'], 'password' => $input['password'],'email' => $input['email'],'lname' => $input['lastname'], 'fname' => $input['firstname']]);
         
         // dd($submit);

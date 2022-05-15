@@ -33,7 +33,7 @@
 
 <body class=" login-content">
     <!-- Login -->
-    <form class="user" method="POST" action='/admin/homepage' onsubmit="return checkForm()">
+    <form class="user" method="POST" action='/admin/dashboard' onsubmit="return checkForm()">
         {{csrf_field()}}
         <div class="lc-block toggled opacity" id="l-login">
             @if(is_object($errors))
