@@ -87,9 +87,11 @@
 
             <div class="checkbox">
             </div>
+
+            <button type="submit" class=" btn btn-login btn-danger btn-float"><i
+                    class="zmdi zmdi-arrow-forward"></i></button>
+        </div>
     </form>
-    <button type="submit" class=" btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></button>
-    </div>
 
     <!-- Register -->
     <div class="lc-block" id="l-register">

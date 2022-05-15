@@ -20,7 +20,7 @@
 
     <!-- Background Video -->
     <video playsinline="playsinline" class="video-tvc" id="video-tvc" autoplay="autoplay" loop="loop" muted>
-        <source src="/components/video/bg.mp4" type="video/mp4" />
+        <source src="/components/video/bgv.mp4" type="video/mp4" />
     </video>
     <!-- 
     <script>
